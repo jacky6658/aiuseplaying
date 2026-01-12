@@ -1,11 +1,36 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# Iron Man HUD Demo
 
-  <h1>Built with AI Studio</h2>
+This is a minimum viable demo of a high-tech "Iron Man" style HUD using **MediaPipe** for hand tracking and **Three.js** for the holographic particle effects.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Features
+- ✅ **Webcam Background**: Live video stream integrated as the base layer.
+- ✅ **MediaPipe Hand Tracking**: Real-time detection of index finger coordinates.
+- ✅ **Three.js HUD**: A wall of 5,000 particles and circular rings that move and tilt based on your finger's position.
+- ✅ **High-Tech Aesthetic**: Cyber blue/cyan color palette with additive blending and scanning effects.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## How to Run
+1. Ensure you are in a web environment (not just opening the file directly from the filesystem, as MediaPipe requires a secure or local server context).
+2. Use a local development server:
+   - `npx serve .`
+   - or `python -m http.server`
+   - or any VS Code "Live Server" extension.
+3. Grant camera permissions when prompted.
+4. Show your hand to the camera. The HUD will lock onto your index finger.
 
-</div>
+## Coordinate Mapping
+The MediaPipe normalized coordinates (0 to 1) are transformed into Three.js world space using:
+- `x: (x - 0.5) * 10`
+- `y: -(y - 0.5) * 6`
+
+## Technical Stack
+- **React 18**: Application structure.
+- **Three.js**: 3D Rendering.
+- **MediaPipe Hands**: Computer Vision.
+- **Tailwind CSS**: UI Overlay styling.
+- **TypeScript**: Type safety.
+
+## Next Steps
+- **Gesture Recognition**: Trigger events (like clicking buttons) when performing a "pinch" or "fist".
+- **Dynamic Particles**: Make particles explode or swarm when the hand moves fast.
+- **Gemini Integration**: Add a voice-enabled AI assistant that responds to gestures.

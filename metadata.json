@@ -1,0 +1,7 @@
+{
+  "name": "Iron Man HUD Demo",
+  "description": "A high-tech interactive HUD that follows your finger using MediaPipe and Three.js.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
